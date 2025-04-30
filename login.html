@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<style>
+    .navya{
+        width: 300px;
+        margin: 5px;
+        border:50px;       
+        border-radius: 90px; 
+        padding: 40px; /* Add padding */
+        background-color:cyan; /* Add background color */
+      
+    }
+</style>
+<center>
+<h1>Welcome to my Student loginform</h1>
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+<form action="/login" method="POST" class="navya">
+
+             loginid<br>
+            <input type="text" name="loginid"  placeholder="enter your loginid" required><br>
+
+            password<br>
+            <input type="password" name="password"  placeholder="enter password" required><br>
+    
+    <button type="submit">Login</button>
+</form></center>
+
+{% endblock %}
+
+
+
