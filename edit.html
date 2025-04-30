@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<center>
+    <h1>Edit Student Record</h1>
+    {% for row in rows %}
+    <form action="{{ url_for('editrec') }}" method="POST">
+        <h3 style="color:blue">Student ID: {{ row['rowid']}}</h3>
+        <input type="hidden" name="rowid" value="{{ row['rowid'] }}">
+        
+        Name<br>
+        <input type="text" name="nm" value="{{ row['name'] }}"/><br>
+
+        Address<br>
+        <input type="text" name="add" value="{{ row['addr'] }}"/><br>
+
+        City<br>
+        <input type="text" name="city" value="{{ row['city'] }}"/><br>
+
+        Zip Code<br>
+        <input type="text" name="zip" value="{{ row['zip'] }}"/><br>
+
+        Login ID<br>
+        <input type="text" name="loginid" value="{{ row['loginid'] }}"/><br>
+
+        Email<br>
+        <input type="email" name="email" value="{{ row['email'] }}"/><br>
+
+        Password<br>
+        <input type="password" name="password" value="{{ row['password'] }}"/><br>
+
+        <input type="submit" value="Submit" /><br>
+    </form>
+    {% endfor %}
+</center>
+{% endblock %}
